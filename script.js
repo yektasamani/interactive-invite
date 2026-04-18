@@ -82,3 +82,60 @@ onValue(ref(db, "checklist"), (snapshot) => {
         checkCaprese();
     }
 });
+
+document.getElementById("rsvpYes").addEventListener("click", () => {
+    fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            access_key: "db6a819a-c925-4321-9ede-00052860947e",
+            subject: "RSVP — date night!",
+            message: "i'll be there",
+        }),
+    });
+    set(ref(db, "rsvp/status"), "yes");
+    document.getElementById("rsvpConfirm").textContent = "you rsvp'd yes";
+    document.getElementById("rsvpConfirm").style.display = "block";
+});
+
+document.getElementById("rsvpDate").addEventListener("click", () => {
+    document.getElementById("dateForm").style.display = "block";
+});
+
+document.getElementById("dateForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const date = document.getElementById("dateInput").value;
+    fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            access_key: "db6a819a-c925-4321-9ede-00052860947e",
+            subject: "New date proposal",
+            message: date,
+        }),
+    });
+    set(ref(db, "rsvp/proposedDate"), date);
+    document.getElementById("rsvpConfirm").textContent = "date proposal sent!";
+    document.getElementById("rsvpConfirm").style.display = "block";
+    document.getElementById("dateForm").style.display = "none";
+    document.getElementById("rsvpDate").style.display = "none";
+});
+
+onValue(ref(db, "rsvp/status"), (snapshot) => {
+    if (snapshot.val() === "yes") {
+        document.querySelector(".rsvp-section h2").textContent = "change of plans?";
+        document.getElementById("rsvpConfirm").textContent = "you rsvp'd yes";
+        document.getElementById("rsvpConfirm").style.display = "block";
+        document.getElementById("rsvpYes").style.display = "none";
+    }
+});
+
+onValue(ref(db, "rsvp/proposedDate"), (snapshot) => {
+    if (snapshot.val()) {
+        document.getElementById("rsvpDate").style.display = "none";
+        document.getElementById("rsvpConfirm").textContent = "date proposal sent!";
+        document.getElementById("rsvpConfirm").style.display = "block";
+        document.getElementById("dateForm").style.display = "none";
+        document.getElementById("rsvpYes").style.display = "none";
+    }
+});

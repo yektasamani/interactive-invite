@@ -90,28 +90,24 @@
         <li>Use balsamic glaze to draw a line and dots of the ladybug</li>
       </ol>
     </section>
+    <section class="rsvp-section">
+      <h2 class="section-title">how does it sound?</h2>
+
+      <div class="rsvp-buttons" id="rsvpButtons">
+        <button class="rsvp-btn" id="rsvpYes">i'll be there</button>
+        <button class="rsvp-btn secondary" id="rsvpDate">propose a new date</button>
+      </div>
+
+      <form id="dateForm" style="display:none">
+        <input type="datetime-local" id="dateInput" placeholder="suggest a date..." />
+        <button type="submit" class="rsvp-btn">send</button>
+      </form>
+
+      <p class="rsvp-confirm" id="rsvpConfirm" style="display:none">
+        can't wait
+      </p>
+    </section>
   </main>
-
-  <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
-    // Your web app's Firebase configuration
-    const firebaseConfig = {
-      apiKey: "AIzaSyB--epumE0mvxc-U4kCnt1csRPDugbFpTg",
-      authDomain: "interactive-invite.firebaseapp.com",
-      databaseURL: "https://interactive-invite-default-rtdb.firebaseio.com",
-      projectId: "interactive-invite",
-      storageBucket: "interactive-invite.firebasestorage.app",
-      messagingSenderId: "198311215035",
-      appId: "1:198311215035:web:454bb2eb11af73eef14e9e"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-  </script>
 
   <script type="module" src="script.js"></script>
 

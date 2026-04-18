@@ -250,6 +250,75 @@ body {
     display: none;
 }
 
+/* RSVP */
+.rsvp-section {
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.rsvp-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: "Great Vibes", cursive;
+    font-weight: normal;
+    color: var(--brown);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.rsvp-section h2::before,
+.rsvp-section h2::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid var(--tan);
+}
+
+.rsvp-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.rsvp-btn {
+    font-family: "EB Garamond";
+    font-size: 1.1rem;
+    padding: 0.6rem 1.8rem;
+    border: 2px solid var(--pine);
+    border-radius: 50px;
+    background-color: var(--pine);
+    color: var(--cream);
+    cursor: pointer;
+}
+
+.rsvp-btn.secondary {
+    background-color: transparent;
+    color: var(--pine);
+}
+
+#dateForm {
+    margin-top: 1rem;
+}
+
+#dateInput {
+    font-family: "EB Garamond";
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--tan);
+    border-radius: 20px;
+    background-color: var(--cream);
+    margin-bottom: 0.5rem;
+}
+
+.rsvp-confirm {
+    font-family: "EB Garamond";
+    font-style: italic;
+    color: var(--pine);
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+
 /*DECORATIVE ELEMENTS*/
 .mushroom-left {
     position: absolute;
