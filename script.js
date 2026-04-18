@@ -58,6 +58,9 @@ function checkCaprese() {
     if (capreseItems.every((cb) => cb.checked)) {
         recipe.ariaHidden = "false";
         recipeDivider.ariaHidden = "false";
+    } else {
+        recipe.ariaHidden = "true";
+        recipeDivider.ariaHidden = "true";
     }
 }
 
