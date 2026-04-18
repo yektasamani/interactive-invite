@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>you're invited</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=EB+Garamond&display=swap" rel="stylesheet" />
+</head>
+
+
+<body>
+
+  <main>
+    <header class="header">
+      <h1>You're Invited</h1>
+      <img src="assets/underline.png" alt="" />
+      <p>a cozy night in the woods</p>
+    </header>
+    <section class="details">
+      <img class="scroll" src="assets/scroll.png" alt="" />
+      <h3>Noah Kahan Documentary Date Night</h3>
+
+      <p>+ Album Listening Party (if we make it that far)</p>
+      <div class="dividerH"></div>
+      <h2>proposed date: Friday, April 24</h2>
+    </section>
+    <img class="decor mushroom-left" src="assets/mushroom.png" alt="" />
+    <img class="decor pinecone-right" src="assets/pinecone.png" alt="" />
+    <section class="countdown">
+      <p>countdown to April 24</p>
+      <div class="timer">
+        <span id="days"></span>
+        <span id="hours"></span>
+        <span id="minutes"></span>
+        <span id="seconds"></span>
+      </div>
+    </section>
+    <img class="decor acorn-right" src="assets/acorns.png" alt="" />
+    <img class="decor acorn-left" src="assets/acorns.png" alt="" />
+    <section class="checklist">
+      <img class="card" src="assets/card.png" alt="" />
+      <h2>your checklist</h2>
+      <ul>
+        <li>
+          <input type="checkbox" id="oj" />
+          <label for="oj">orange juice</label>
+        </li>
+        <li>
+          <input type="checkbox" id="mask" />
+          <label for="mask">face mask</label>
+        </li>
+        <li>
+          <input type="checkbox" id="cheese" />
+          <label for="cheese">mozzarella cheese log</label>
+        </li>
+        <li>
+          <input type="checkbox" id="tomato" />
+          <label for="tomato">cherry tomatoes</label>
+        </li>
+        <li>
+          <input type="checkbox" id="basil" />
+          <label for="basil">basil</label>
+        </li>
+        <li>
+          <input type="checkbox" id="glaze" />
+          <label for="glaze">balsamic glaze</label>
+        </li>
+        <li>
+          <input type="checkbox" id="blanket" />
+          <label for="blanket">blanket</label>
+        </li>
+        <li>
+          <input type="checkbox" id="package" />
+          <label for="package">pick up your package</label>
+        </li>
+      </ul>
+      <p class="checklist-hint">*check off your caprese ingredients to reveal the recipe</p>
+    </section>
+    <p class="recipe-divider" aria-hidden="true" id="recipeDivider">once ingredients are ready</p>
+    <section class="recipe" aria-hidden="true" id="recipe">
+      <img class="recipecard" src="assets/recipe_card.png" alt="">
+      <h3>"Last of the (Lady)bugs" Caprese</h3>
+      <ol>
+        <li>Wash basil and cherry tomatoes</li>
+        <li>Slice the mozzarella cheese</li>
+        <li>Slice cherry tomatoes lengthwise</li>
+        <li>Layer mozzarella, basil, cherry tomato</li>
+        <li>Use balsamic glaze to draw a line and dots of the ladybug</li>
+      </ol>
+    </section>
+  </main>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyB--epumE0mvxc-U4kCnt1csRPDugbFpTg",
+      authDomain: "interactive-invite.firebaseapp.com",
+      databaseURL: "https://interactive-invite-default-rtdb.firebaseio.com",
+      projectId: "interactive-invite",
+      storageBucket: "interactive-invite.firebasestorage.app",
+      messagingSenderId: "198311215035",
+      appId: "1:198311215035:web:454bb2eb11af73eef14e9e"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  </script>
+
+  <script type="module" src="script.js"></script>
+
+
+</body>
+
+</html>

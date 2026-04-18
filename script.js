@@ -1,0 +1,84 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+import {
+    getDatabase,
+    ref,
+    set,
+    onValue,
+} from "https://www.gstatic.com/firebasejs/11.6.0/firebase-database.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyB--epumE0mvxc-U4kCnt1csRPDugbFpTg",
+    authDomain: "interactive-invite.firebaseapp.com",
+    databaseURL: "https://interactive-invite-default-rtdb.firebaseio.com",
+    projectId: "interactive-invite",
+    storageBucket: "interactive-invite.firebasestorage.app",
+    messagingSenderId: "198311215035",
+    appId: "1:198311215035:web:454bb2eb11af73eef14e9e",
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+const target = new Date("2026-04-24T19:00:00-07:00");
+
+function tick() {
+    const now = new Date();
+    const diff = target - now;
+
+    if (diff <= 0) {
+        document.getElementById("days").textContent = "the date has begun";
+        document.getElementById("hours").textContent = "";
+        document.getElementById("minutes").textContent = "";
+        document.getElementById("seconds").textContent = "";
+        return;
+    }
+
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+
+    document.getElementById("days").textContent = d + "d ";
+    document.getElementById("hours").textContent = h + "h ";
+    document.getElementById("minutes").textContent = m + "m ";
+    document.getElementById("seconds").textContent = s + "s";
+}
+
+tick();
+setInterval(tick, 1000);
+
+const capreseItems = ["cheese", "tomato", "basil", "glaze"].map((id) =>
+    document.getElementById(id),
+);
+
+const recipe = document.getElementById("recipe");
+const recipeDivider = document.getElementById("recipeDivider");
+
+function checkCaprese() {
+    if (capreseItems.every((cb) => cb.checked)) {
+        recipe.ariaHidden = "false";
+        recipeDivider.ariaHidden = "false";
+    }
+}
+
+capreseItems.forEach((cb) => cb.addEventListener("change", checkCaprese));
+
+const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+
+allCheckboxes.forEach((cb) => {
+    cb.addEventListener("change", () => {
+        set(ref(db, "checklist/" + cb.id), cb.checked);
+    });
+});
+
+onValue(ref(db, "checklist"), (snapshot) => {
+    const data = snapshot.val();
+    if (data) {
+        allCheckboxes.forEach((cb) => {
+            if (data[cb.id] !== undefined) {
+                cb.checked = data[cb.id];
+            }
+        });
+        checkCaprese();
+    }
+});
