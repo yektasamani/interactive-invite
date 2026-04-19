@@ -154,7 +154,7 @@ body {
 }
 
 .checklist li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
 }
 
 .checklist input[type="checkbox"] {
@@ -369,13 +369,19 @@ body {
         margin-bottom: 0.2rem;
     }
 
+    .checklist {
+        padding: 0;
+    }
+
     .checklist ul {
         padding: 0 5rem;
         font-size: 0.9rem;
     }
-    .checklist li {
-        margin-bottom: 0.2rem;
+
+    .checklist-hint {
+        padding: 0 3rem;
     }
+
     .recipe {
         min-height: 350px;
         padding: 0 0;
