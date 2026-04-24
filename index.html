@@ -51,12 +51,20 @@
           <label for="mask">face mask</label>
         </li>
         <li>
+          <input type="checkbox" id="parchment" />
+          <label for="parchment">parchment paper</label>
+        </li>
+        <li>
           <input type="checkbox" id="pretzel" />
           <label for="pretzel">pretzels</label>
         </li>
         <li>
           <input type="checkbox" id="choco" />
-          <label for="choco">chocolate chips</label>
+          <label for="choco">dark chocolate chips</label>
+        </li>
+        <li>
+          <input type="checkbox" id="mint" />
+          <label for="mint">peppermint extract</label>
         </li>
         <li>
           <input type="checkbox" id="cheese" />
@@ -74,16 +82,12 @@
           <input type="checkbox" id="glaze" />
           <label for="glaze">balsamic glaze</label>
         </li>
-        <li>
-          <input type="checkbox" id="blanket" />
-          <label for="blanket">blanket</label>
-        </li>
       </ul>
-      <p class="checklist-hint">*check off your caprese ingredients to reveal the recipe</p>
+      <p class="checklist-hint">*check off specific ingredients to reveal recipes (2x)</p>
     </section>
     <p class="recipe-divider" aria-hidden="true" id="recipeDivider">once ingredients are ready</p>
-    <section class="recipe" aria-hidden="true" id="recipe">
-      <img class="recipecard" src="assets/recipe_card.png" alt="">
+    <section class="caprese-recipe" aria-hidden="true" id="caprese-recipe">
+      <img class="caprese-recipecard" src="assets/caprese_recipe_card.png" alt="">
       <h3>"Last of the (Lady)bugs" Caprese</h3>
       <ol>
         <li>Wash basil and cherry tomatoes</li>
@@ -91,6 +95,18 @@
         <li>Slice cherry tomatoes lengthwise</li>
         <li>Layer mozzarella, basil, cherry tomato</li>
         <li>Use balsamic glaze to draw line and dots of ladybug</li>
+      </ol>
+    </section>
+    <section class="pretzel-recipe" aria-hidden="true" id="pretzel-recipe">
+      <img class="pretzel-recipecard" src="assets/pretzel_recipe_card.png" alt="">
+      <h3>Mint Chocolate Pretzel Stick (Seasons)</h3>
+      <ol>
+        <li>Line a tray with parchment paper</li>
+        <li>Melt &frac14 cup choco chips (30s microwave intervals, stir in between)</li>
+        <li>Mix in &frac14 tsp peppermint extract</li>
+        <li>Dip one side of the pretzel in the melted chocolate</li>
+        <li>Lay pretzel on parchment paper and repeat</li>
+        <li>Place in the fridge for 15 minutes to set</li>
       </ol>
     </section>
     <section class="rsvp-section">

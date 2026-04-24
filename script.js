@@ -51,19 +51,44 @@ const capreseItems = ["cheese", "tomato", "basil", "glaze"].map((id) =>
     document.getElementById(id),
 );
 
-const recipe = document.getElementById("recipe");
+const capreseRecipe = document.getElementById("caprese-recipe");
 const recipeDivider = document.getElementById("recipeDivider");
+
+const pretzelItems = ["parchment", "pretzel", "choco", "mint"].map((id) =>
+    document.getElementById(id),
+);
+
+const pretzelRecipe = document.getElementById("pretzel-recipe");
 
 function checkCaprese() {
     if (capreseItems.every((cb) => cb.checked)) {
-        recipe.ariaHidden = "false";
+        capreseRecipe.ariaHidden = "false";
         recipeDivider.ariaHidden = "false";
     } else {
-        recipe.ariaHidden = "true";
-        recipeDivider.ariaHidden = "true";
+        capreseRecipe.ariaHidden = "true";
+        if (pretzelItems.every((cb) => cb.checked)) {
+            recipeDivider.ariaHidden = "false";
+        } else {
+            recipeDivider.ariaHidden = "true";
+        }
     }
 }
 
+function checkPretzel() {
+    if (pretzelItems.every((cb) => cb.checked)) {
+        pretzelRecipe.ariaHidden = "false";
+        recipeDivider.ariaHidden = "false";
+    } else {
+        pretzelRecipe.ariaHidden = "true";
+        if (capreseItems.every((cb) => cb.checked)) {
+            recipeDivider.ariaHidden = "false";
+        } else {
+            recipeDivider.ariaHidden = "true";
+        }
+    }
+}
+
+pretzelItems.forEach((cb) => cb.addEventListener("change", checkPretzel));
 capreseItems.forEach((cb) => cb.addEventListener("change", checkCaprese));
 
 const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');

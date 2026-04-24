@@ -150,7 +150,7 @@ body {
     padding: 0 6rem;
     color: var(--burnt-brown);
     text-align: left;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .checklist li {
@@ -208,7 +208,7 @@ body {
     border-bottom: 1px solid var(--tan);
 }
 
-.recipe {
+.caprese-recipe {
     max-width: 600px;
     position: relative;
     margin: 0 auto;
@@ -216,7 +216,7 @@ body {
     min-height: 400px;
 }
 
-.recipecard {
+.caprese-recipecard {
     position: absolute;
     width: 100%;
     height: auto;
@@ -226,26 +226,69 @@ body {
     z-index: -1;
 }
 
-.recipe h3 {
+.caprese-recipe h3 {
     font-family: "EB Garamond";
     text-align: center;
     color: var(--burnt-brown);
-    font-size: 2.5rem;
+    font-size: 2rem;
     padding-left: 3rem;
 }
 
-.recipe ol {
-    padding-top: 2rem;
+.caprese-recipe ol {
+    padding-top: 0.65rem;
     font-family: "EB Garamond";
     color: var(--burnt-brown);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
-.recipe li {
-    margin-bottom: 1.4rem;
+.caprese-recipe li {
+    margin-bottom: 1.65rem;
 }
 
-.recipe[aria-hidden="true"],
+.caprese-recipe[aria-hidden="true"],
+.recipe-divider[aria-hidden="true"] {
+    display: none;
+}
+
+.pretzel-recipe {
+    max-width: 600px;
+    position: relative;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 400px;
+    margin-top: 4rem;
+}
+
+.pretzel-recipecard {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    object-fit: fill;
+    z-index: -1;
+}
+
+.pretzel-recipe h3 {
+    font-family: "EB Garamond";
+    text-align: center;
+    color: var(--burnt-brown);
+    font-size: 2rem;
+    padding-left: 3rem;
+}
+
+.pretzel-recipe ol {
+    padding-top: 0.65rem;
+    font-family: "EB Garamond";
+    color: var(--burnt-brown);
+    font-size: 1.3rem;
+}
+
+.pretzel-recipe li {
+    margin-bottom: 1.65rem;
+}
+
+.pretzel-recipe[aria-hidden="true"],
 .recipe-divider[aria-hidden="true"] {
     display: none;
 }
@@ -372,6 +415,9 @@ body {
     .checklist {
         padding: 0;
     }
+    .checklist h2 {
+        font-size: 1.8rem;
+    }
 
     .checklist ul {
         padding: 0 5rem;
@@ -379,24 +425,47 @@ body {
     }
 
     .checklist-hint {
-        padding: 0 3rem;
+        padding: 0 2.5rem;
     }
 
-    .recipe {
-        min-height: 350px;
+    .caprese-recipe {
+        min-height: 280px;
         padding: 0 0;
+        margin: 0;
     }
-    .recipe h3 {
-        font-size: 1.2rem;
+    .caprese-recipe h3 {
+        font-size: 1rem;
         padding-top: 3rem;
         padding-left: 1.5rem;
     }
-    .recipe ol {
-        font-size: 0.9rem;
-        padding-top: 0.3rem;
+
+    .caprese-recipe ol {
+        font-size: 0.8rem;
     }
-    .recipe li {
-        margin-bottom: 0.7rem;
+
+    .caprese-recipe li {
+        margin-bottom: 0.5rem;
+    }
+
+    .pretzel-recipe {
+        min-height: 280px;
+        padding: 0 0;
+        margin: 0;
+    }
+
+    .pretzel-recipe h3 {
+        font-size: 1rem;
+        padding-top: 3rem;
+        padding-left: 1.5rem;
+    }
+    .pretzel-recipe ol {
+        max-width: 300px;
+        font-size: 0.8rem;
+        padding-top: 0.4rem;
+        line-height: 1;
+    }
+    .pretzel-recipe li {
+        margin-bottom: 0.65rem;
     }
 
     .rsvp-section h2 {
