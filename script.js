@@ -19,7 +19,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-const target = new Date("2026-04-25T18:30:00-07:00");
+const target = new Date("2026-04-25T16:30:00-07:00");
 
 function tick() {
     const now = new Date();
